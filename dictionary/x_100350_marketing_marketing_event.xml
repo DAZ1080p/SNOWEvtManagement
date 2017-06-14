@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Marketing Event" max_length="40" name="x_100350_marketing_marketing_event" type="collection">
+        <element label="Budget" max_length="40" name="budget" type="currency"/>
+        <element attributes="omit_sys_original=true" label="Budget Remaining" max_length="15" name="budget_remaining" read_only="true" type="currency"/>
+        <element choice="1" label="City" max_length="40" name="city" type="choice">
+            <choice>
+                <element label="Dubin" sequence="0" value="Dubin"/>
+                <element label="Dublin" sequence="0" value="Dublin"/>
+                <element label="Hong Kong" sequence="1" value="Hong Kong"/>
+                <element label="New York" sequence="2" value="New York"/>
+                <element label="Sydney" sequence="3" value="Sydney"/>
+            </choice>
+        </element>
+        <element label="End date" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Event coordinator" mandatory="true" max_length="32" name="event_coordinator" reference="sys_user" type="reference"/>
+        <element attributes="omit_sys_original=true" label="Event cost" max_length="15" name="event_cost" read_only="true" type="currency"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Max capacity" max_length="40" name="of_attendees_expected" type="integer"/>
+        <element label="Attendees Registered" max_length="40" name="of_attendees_registered" type="integer"/>
+        <element label="Sponsor" max_length="40" name="sponsor" type="string"/>
+        <element label="Start date" max_length="40" name="start_date" type="glide_date"/>
+        <index name="index">
+            <element name="event_coordinator"/>
+        </index>
+    </element>
+</database>
